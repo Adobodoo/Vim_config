@@ -1,0 +1,69 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+          {
+          "foreground": "#56B6C2",
+          "style": "powerline",
+          "template": "{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "foreground": "#E5C07B",
+          "style": "plain",
+          "properties": {
+            "display_host": false
+          },
+          "template": "{{if .Root}} \uf0e7 {{.UserName}} {{else}}{{.UserName}}{{end}}",
+          "type": "session"
+        },
+        {
+          "foreground": "#61AFEF",
+          "properties": {
+            "folder_icon": "\uf115",
+            "home_icon": "\uf7dd",
+            "style": "agnoster"
+          },
+          "style": "plain",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#F3C267",
+          "properties": {
+            "branch_gone_icon": "\u274e",
+            "branch_identical_icon": "\uf14a"
+          },
+          "style": "plain",
+          "template": " {{ .HEAD }} ",
+          "type": "git"
+        },
+        {
+          "foreground": "#E06C75",
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#4F5359",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "plain",
+          "template": "[{{ .CurrentDate | date .Format }}]",
+          "type": "time"
+        }
+      ],
+    "type": "rprompt"
+    }
+  ],
+  "version": 2
+}
